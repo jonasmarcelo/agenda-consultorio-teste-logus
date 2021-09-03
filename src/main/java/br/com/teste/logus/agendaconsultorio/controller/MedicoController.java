@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping("/medicos")
 public class MedicoController {
 
     @Autowired
@@ -25,7 +26,7 @@ public class MedicoController {
 
     }
 
-    @GetMapping(path = "api/medicos")
+    @GetMapping(path = "/api/medicos")
     public Iterable<MedicoModel> medicos(){
         return repository.findAll();
     }
