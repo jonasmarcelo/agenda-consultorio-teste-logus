@@ -1,5 +1,7 @@
 package br.com.teste.logus.agendaconsultorio.model;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -10,7 +12,9 @@ import java.util.Date;
 public class ConsultaModel {
 
     @Id
-    private Integer codigo;
+    @GeneratedValue(generator = "increment")
+    @GenericGenerator(name = "increment", strategy = "increment")
+    private Long id;
 
     @Column(nullable = false, length = 50)
     private String nomePaciente;
@@ -27,12 +31,12 @@ public class ConsultaModel {
     @Temporal(TemporalType.TIMESTAMP)
     private Date data;
 
-    public Integer getCodigo() {
-        return codigo;
+    public Long getId() {
+        return id;
     }
 
-    public void setCodigo(Integer codigo) {
-        this.codigo = codigo;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNomePaciente() {
