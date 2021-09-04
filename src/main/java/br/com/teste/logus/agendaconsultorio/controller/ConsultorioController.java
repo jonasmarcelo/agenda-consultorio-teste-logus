@@ -18,7 +18,7 @@ public class ConsultorioController {
     @Autowired
     private ConsultorioRepository repository;
 
-    @PostMapping(path = "api/consultorio/salvar")
+    @PostMapping(path = "/api/consultorio/salvar")
     public ConsultorioModel salvar(@RequestBody ConsultorioModel consultorio){
         return this.repository.save(consultorio);
     }
