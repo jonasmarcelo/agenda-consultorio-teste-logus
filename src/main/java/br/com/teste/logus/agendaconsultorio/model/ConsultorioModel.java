@@ -1,7 +1,10 @@
 package br.com.teste.logus.agendaconsultorio.model;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 /**
@@ -11,17 +14,19 @@ import javax.persistence.Id;
 public class ConsultorioModel {
 
     @Id
-    private Integer codigo;
+    @GeneratedValue(generator = "increment")
+    @GenericGenerator(name = "increment", strategy = "increment")
+    private Long id;
 
     @Column(nullable = false, length = 50)
     private Integer numero;
 
-    public Integer getCodigo() {
-        return codigo;
+    public Long getId() {
+        return id;
     }
 
-    public void setCodigo(Integer codigo) {
-        this.codigo = codigo;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public Integer getNumero() {
