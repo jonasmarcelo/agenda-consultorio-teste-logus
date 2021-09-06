@@ -1,8 +1,12 @@
 package br.com.teste.logus.agendaconsultorio.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.Date;
 
 /**
@@ -28,8 +32,12 @@ public class ConsultaModel {
     private ConsultorioModel consultorio;
 
     @Column(nullable = false)
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date data;
+    @JsonFormat(pattern = "yyyy-MM-dd", shape = JsonFormat.Shape.STRING)
+    private LocalDate data;
+
+//    @Column(nullable = false)
+//    @JsonFormat(pattern = "hh:mm:ss", shape = JsonFormat.Shape.STRING)
+//    private LocalDateTime hora;
 
     public Long getId() {
         return id;
@@ -63,11 +71,11 @@ public class ConsultaModel {
         this.consultorio = consultorio;
     }
 
-    public Date getData() {
+    public LocalDate getData() {
         return data;
     }
 
-    public void setData(Date data) {
+    public void setData(LocalDate data) {
         this.data = data;
     }
 }
