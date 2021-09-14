@@ -34,14 +34,6 @@ public class ConsultaModel {
     @Column(nullable = false)
     private LocalDateTime dataHora;
 
-//    @Column(nullable = false)
-//    @JsonFormat(pattern = "dd/MM/yyyy", shape = JsonFormat.Shape.STRING)
-//    private LocalDate data;
-
-//    @Column(nullable = false)
-//    @JsonFormat(pattern = "hh:mm:ss", shape = JsonFormat.Shape.STRING)
-//    private LocalDateTime hora;
-
     public Long getId() {
         return id;
     }
