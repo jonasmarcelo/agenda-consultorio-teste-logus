@@ -32,8 +32,11 @@ public class ConsultaModel {
     private ConsultorioModel consultorio;
 
     @Column(nullable = false)
-    @JsonFormat(pattern = "dd/MM/yyyy", shape = JsonFormat.Shape.STRING)
-    private LocalDate data;
+    private LocalDateTime dataHora;
+
+//    @Column(nullable = false)
+//    @JsonFormat(pattern = "dd/MM/yyyy", shape = JsonFormat.Shape.STRING)
+//    private LocalDate data;
 
 //    @Column(nullable = false)
 //    @JsonFormat(pattern = "hh:mm:ss", shape = JsonFormat.Shape.STRING)
@@ -71,11 +74,11 @@ public class ConsultaModel {
         this.consultorio = consultorio;
     }
 
-    public LocalDate getData() {
-        return data;
+    public LocalDateTime getDataHora() {
+        return dataHora;
     }
 
-    public void setData(LocalDate data) {
-        this.data = data;
+    public void setDataHora(LocalDateTime dataHora) {
+        this.dataHora = dataHora;
     }
 }
