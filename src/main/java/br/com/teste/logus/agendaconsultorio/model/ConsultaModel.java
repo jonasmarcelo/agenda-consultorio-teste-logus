@@ -7,6 +7,7 @@ import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.ZonedDateTime;
 import java.util.Date;
 
 /**
@@ -31,8 +32,11 @@ public class ConsultaModel {
     @JoinColumn(name="id_consultorio")
     private ConsultorioModel consultorio;
 
+//    @Column(nullable = false)
+//    private LocalDateTime dataHora;
+
     @Column(nullable = false)
-    private LocalDateTime dataHora;
+    private ZonedDateTime dataHora;
 
     public Long getId() {
         return id;
@@ -66,11 +70,20 @@ public class ConsultaModel {
         this.consultorio = consultorio;
     }
 
-    public LocalDateTime getDataHora() {
+//    public LocalDateTime getDataHora() {
+//        return dataHora;
+//    }
+
+//    public void setDataHora(LocalDateTime dataHora) {
+//        this.dataHora = dataHora;
+//    }
+
+
+    public ZonedDateTime getDataHora() {
         return dataHora;
     }
 
-    public void setDataHora(LocalDateTime dataHora) {
+    public void setDataHora(ZonedDateTime dataHora) {
         this.dataHora = dataHora;
     }
 }
